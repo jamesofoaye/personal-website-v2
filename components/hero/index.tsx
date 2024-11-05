@@ -51,7 +51,7 @@ export const HeroParallax: FC = () => {
 
 export const Header = () => {
   const paragraph =
-    "<p>Frontend Engineer with a strong eye for innovative design and a keen understanding of techniques geared toward optimum user experience. I&apos;m passionate about continuously learning in the tech industry and supporting people to solve their technical problems.</p>";
+    "<p>Frontend Engineer with a strong eye for innovative design and a keen understanding of techniques geared toward optimum user experience. I'm passionate about continuously learning in the tech industry and supporting people to solve their technical problems.</p>";
 
   return (
     <div className="max-w-7xl relative mx-auto px-4 w-full left-0 top-0">
@@ -69,7 +69,7 @@ export const Header = () => {
       >
         James
       </Text>
-      <Text textAlign={{ base: "center", lg: "left" }} maxW={"800px"}>
+      <Text textAlign={{ base: "center", lg: "left" }} maxW={"800px"} zIndex={1}>
         {paragraph}
       </Text>
       <Box
