@@ -14,13 +14,5 @@ export const PROJECTS = [
     link: "https://safe.dawurobo.com/",
     image: "/projects/dawurobo-safe.png",
     gradient: "linear-gradient(to right, #378CBC, #45B28C)",
-  },
-  {
-    title: "MCAT Global",
-    description:
-      "MCAT Global is an Oil and Gas marketing company that provides services to the oil and gas industry. The website is built with HTML, Tailwind CSS, JavaScript, JQuery and Firebase.",
-    link: "https://mcatglobal.com/",
-    image: "/projects/mcat-global.png",
-    gradient: "linear-gradient(to right, #111826, #CD2543)",
-  },
-];
+  }
+] as const;

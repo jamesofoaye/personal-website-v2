@@ -1,25 +1,24 @@
 import { Commissioner } from "next/font/google";
-import { extendTheme } from "@chakra-ui/react";
+import { createSystem, defaultConfig } from "@chakra-ui/react";
 
 const commissioner = Commissioner({
-	subsets: ["latin"],
+  subsets: ["latin"],
 });
 
-export const fonts = {
-	commissioner,
-};
+export const fonts = { commissioner };
 
-const colors = {
-	brand: {
-		// you can add more custom colors here
-		black: "#0E1017",
-		gold: "#E6AF2E",
-	},
-};
-
-export const theme = extendTheme({
-	fonts: {
-		body: commissioner.style.fontFamily,
-	},
-	colors,
+export const systemTheme = createSystem(defaultConfig, {
+  theme: {
+    tokens: {
+      colors: {
+        brand: {
+          black: { value: "#0E1017", description: "Primary black color" },
+          gold: { value: "#E6AF2E", description: "Primary gold color" },
+        },
+      },
+      fonts: {
+        body: { value: commissioner.style.fontFamily },
+      }
+    }
+  }
 });

@@ -1,66 +1,46 @@
-import { Link } from "@chakra-ui/next-js";
-import { chakra } from "@chakra-ui/react";
+import { FC } from "react";
+import Link from "next/link";
+import { chakra, Link as ChakraLink } from "@chakra-ui/react";
 import { motion } from "framer-motion";
-import { Dispatch, FC, SetStateAction } from "react";
+import { NAV_ITEMS } from "./data";
 
-type Props = {
-	isNavOpen: boolean;
-	setIsNavOpen: Dispatch<SetStateAction<boolean>>;
+type MobileNavProps = {
+  isNavOpen: boolean;
 };
 
 const variants = {
-	visible: {
-		opacity: 1,
-		y: 0,
-	},
-	hidden: { opacity: 0, y: -200 },
+  visible: { opacity: 1, y: 0 },
+  hidden: { opacity: 0, y: -200 },
 };
 
-const MobileNav: FC<Props> = ({ isNavOpen, setIsNavOpen }) => {
-	const removeNav = () => setIsNavOpen(false);
-	return (
-		<>
-			{isNavOpen && (
-				<chakra.div
-					w="full"
-					pos={"absolute"}
-					display={{ base: "block", lg: "none" }}
-					bgColor={"#fff"}
-					borderWidth={1}
-				>
-					<chakra.div
-						p={4}
-						as={motion.div}
-						initial="hidden"
-						animate="visible"
-						variants={variants}
-						display={"flex"}
-						flexDir={"column"}
-						gap={2}
-					>
-						<Link
-							href={"/"}
-							_hover={{ textDecor: "none", fontWeight: "bold" }}
-						>
-							Home
-						</Link>
-						<Link
-							href={"/#experience"}
-							_hover={{ textDecor: "none", fontWeight: "bold" }}
-						>
-							Experience
-						</Link>
-						<Link
-							href={"/#projects"}
-							_hover={{ textDecor: "none", fontWeight: "bold" }}
-						>
-							Projects
-						</Link>
-					</chakra.div>
-				</chakra.div>
-			)}
-		</>
-	);
+const MobileNav: FC<MobileNavProps> = ({ isNavOpen }) => {
+  return (
+    <>
+      {isNavOpen && (
+        <chakra.div
+          w="full" pos={"absolute"}
+          display={{ base: "block", lg: "none" }}
+          bgColor={"#fff"} borderWidth={1}
+        >
+          <motion.div
+            initial="hidden" animate="visible"
+            variants={variants}
+            style={{ padding: "1rem", display: "flex", flexDirection: "column", gap: "0.5rem" }}
+          >
+            {NAV_ITEMS.map((item, index) => (
+              <ChakraLink
+                key={`nav-item-${index}`} asChild
+                _hover={{ textDecor: "none", fontWeight: "bold" }}
+                _focus={{ outline: "none" }}
+              >
+                <Link href={item.href}>{item.label}</Link>
+              </ChakraLink>
+            ))}
+          </motion.div>
+        </chakra.div>
+      )}
+    </>
+  );
 };
 
 export default MobileNav;

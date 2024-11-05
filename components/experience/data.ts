@@ -12,7 +12,7 @@ export const EXPERIENCES = [
   {
     img: "/experience/dawurobo.svg",
     name: "Dawurobo",
-    title: "Frontend Engineer",
+    title: "V.P of Software Engineering",
   },
   {
     img: "/experience/skinplus.svg",
@@ -29,4 +29,4 @@ export const EXPERIENCES = [
     name: "Fabra Online",
     title: "FullStack Web Developer",
   },
-];
+] as const;

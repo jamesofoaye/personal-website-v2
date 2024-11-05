@@ -1,3 +1,4 @@
+import { PROJECTS } from './../projects/data';
 // export const products = [
 // 	{
 // 		title: "Moonbeam",
@@ -87,15 +88,20 @@
 // 	},
 // ];
 
-export const products = [
-	{
-		title: "SkinPlus Medspa Website",
-		link: "https://skinplusofficial.com/",
-		thumbnail: "/projects/skinplus.png",
-	},
-	{
-		title: "Dawurobo Safe",
-		link: "https://safe.dawurobo.com/",
-		thumbnail: "/projects/dawurobo-safe.png",
-	},
-];
+export const HIGHLIGHTED_PROJECTS = [
+  {
+    title: "SkinPlus Medspa Website",
+    link: "https://skinplusofficial.com/",
+    thumbnail: "/projects/skinplus.png",
+  },
+  {
+    title: "Dawurobo Safe",
+    link: "https://safe.dawurobo.com/",
+    thumbnail: "/projects/dawurobo-safe.png",
+  },
+]
+
+export const HERO_ACTIONS = [
+  { title: "My experience", link: "/#experience" },
+  { title: "Projects", link: "/#projects" }
+] as const;

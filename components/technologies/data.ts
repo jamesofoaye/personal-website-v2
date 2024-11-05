@@ -59,4 +59,4 @@ export const TECHNOLOGIES = [
     name: "pwa",
     color: "#F2E9FF",
   },
-];
+] as const;

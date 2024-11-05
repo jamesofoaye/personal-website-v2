@@ -1,15 +1,15 @@
-import Experience from "@/components/experience";
-import { HeroParallax } from "@/components/hero/hero";
 import { Nav } from "@/components/nav";
+import { HeroParallax } from "@/components/hero";
+import Technologies from "@/components/technologies";
+import Experience from "@/components/experience";
 import Projects from "@/components/projects";
-import Tech from "@/components/technologies";
 
 export default function Home() {
   return (
     <>
       <Nav />
       <HeroParallax />
-      <Tech />
+      <Technologies />
       <Experience />
       <Projects />
     </>
