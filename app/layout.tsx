@@ -4,18 +4,25 @@ import { fonts } from "./chakra-config";
 import { Provider } from "@/components/ui/provider"
 import { FC, ReactNode } from "react";
 
-export const metadata: Metadata = {
+const SEO_METADATA = {
   title: "Ofori James Ayerakwa",
-  description:
-    "A Frontend Engineer with a strong eye for innovative design and a keen understanding of techniques geared toward optimum user experience. I'm passionate about continuously learning in the tech industry and supporting people to solve their technical problems.",
-  icons: {
-    icon: "/favicon.ico",
-  },
+  description: "A Frontend Engineer with a strong eye for innovative design and a keen understanding of techniques geared toward optimum user experience. I'm passionate about continuously learning in the tech industry and supporting people to solve their technical problems.",
+  image: "https://ofori-james-ayerakwa.me/og-image.jpg",
+}
+
+export const metadata: Metadata = {
+  title: SEO_METADATA.title,
+  description: SEO_METADATA.description,
   openGraph: {
-    title: "Ofori James Ayerakwa",
-    description:
-      "A Frontend Engineer with a strong eye for innovative design and a keen understanding of techniques geared toward optimum user experience. I'm passionate about continuously learning in the tech industry and supporting people to solve their technical problems.",
+    title: SEO_METADATA.title,
+    description: SEO_METADATA.description,
+    images: [SEO_METADATA.image],
   },
+  twitter: {
+    title: SEO_METADATA.title,
+    description: SEO_METADATA.description,
+    images: [SEO_METADATA.image],
+  }
 };
 
 type RootLayoutProps = {
