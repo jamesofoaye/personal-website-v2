@@ -1,8 +1,10 @@
+import { FC, ReactNode } from "react";
 import type { Metadata } from "next";
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/react"
 import "./globals.css";
 import { fonts } from "./chakra-config";
 import { Provider } from "@/components/ui/provider"
-import { FC, ReactNode } from "react";
 
 const SEO_METADATA = {
   title: "Ofori James Ayerakwa",
@@ -37,6 +39,8 @@ const RootLayout: FC<RootLayoutProps> = ({ children }) => {
     >
       <body>
         <Provider>{children}</Provider>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
