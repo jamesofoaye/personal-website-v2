@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 
 type RootLayoutProps = { children: ReactNode };
 
-const RootLayout: FC<RootLayoutProps> = ({ children }) => {
+const RootLayout: FC<Readonly<RootLayoutProps>> = ({ children }) => {
   return (
     <html
       suppressHydrationWarning lang="en"
